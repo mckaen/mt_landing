@@ -1,0 +1,19 @@
+.header {
+    padding: 40px 0;
+    .link-logo {
+        background-image: url('./images/logo1.png');
+        height: 50px;
+        width: 100px;
+        display: block;
+        text-decoration: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.tet {
+    span {
+        display: block;
+        text-align: center;
+    }
+}

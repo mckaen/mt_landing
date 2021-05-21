@@ -1,0 +1,22 @@
+footer {
+    background: #f7f7f7;
+    height: 200px;
+    width: 100%;
+    .links {
+        display: flex;
+        flex-direction: column;
+        padding: 24px 0;
+    }
+    .address {
+        span {
+            display: block;
+            font-size: 10px;
+            text-align: center;
+            line-height: 15px;
+        }
+    }
+    .info {
+        display: flex;
+        align-items: center;
+    }
+}

@@ -1,0 +1,34 @@
+html {
+    height: 100%;
+} 
+body {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    color: #1c3963;
+}
+.wrapper {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.line{
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    display: block;
+    color: #666;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
