@@ -4,13 +4,11 @@ const develop = process.argv.indexOf( 'production' ) == -1,
     MiniCssExtractPlugin = require('mini-css-extract-plugin'),
     { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-console.log( 'DEVELOP: ', develop)
-
 module.exports = env => {
 	const buildConfig = {
 		entry: [ './src/index.js' ],
 		output: {
-			path: join( __dirname, 'dist' ),
+			path: join( __dirname, 'dist', 'assets' ),
 			filename: develop ? '[name].js' : '[name].[fullhash].js'
 		},
 		module: { rules: [] },
@@ -30,12 +28,12 @@ module.exports = env => {
             port: 9000,
             hot: true,
             index: join( __dirname, 'dist', 'index.html' ),
+			contentBase: join(__dirname, 'dist'),
             stats: 'errors-only',
             writeToDisk: true,
             historyApiFallback: true
         }
 	}
-
     buildConfig.module.rules.push({
 		test: /\.(png|jpe?g|gif|woff2|eot|woff)$/i,
 		use: {
@@ -81,12 +79,13 @@ module.exports = env => {
 	})
 
 	buildConfig.plugins.push( new HtmlWebpackPlugin({
-		filename: 'index.html',
+		filename: '../index.html',
 		template: './src/index.html',
 		minify: {
             collapseWhitespace: !develop 
         },
-        inject: 'body'
+        inject: 'body',
+		publicPath: '/assets/'
 	}) )
 
     buildConfig.plugins.push( new CleanWebpackPlugin() )

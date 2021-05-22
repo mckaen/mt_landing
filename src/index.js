@@ -1,3 +1,9 @@
 import './styles/base.scss'
 
-console.log( 1 )
+import { Tracker } from './app/tracker'
+
+( function() {
+    document.addEventListener( 'DOMContentLoaded', () => {
+        new Tracker()
+    })
+}) ()

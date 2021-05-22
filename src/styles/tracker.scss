@@ -1,0 +1,47 @@
+.tracker-body {
+    span {
+        display: block;
+        text-align: center;
+    }
+    .input_group {
+        margin: 15px 0;
+        min-height: 100px;
+    }
+    .resultContainer {
+        width: 100%;
+        max-width: 500px;
+        background-color: #f8f9fa;
+        margin:  25px auto;
+        max-height: 0;
+        overflow: hidden;
+        &.show {
+            transition: .8s;
+            max-height: 1000px;
+        }
+        .tracker-results {
+            padding: 15px;
+            border: 1px solid #d8d8d8;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .tracker-item {
+            font-size: 14px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #d8d8d8;
+            &:last-child {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border: 0;
+            }
+            .ti-header {
+                font-weight: 700;
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+            .ti-value {
+
+            }
+        }
+    }
+}
