@@ -11,7 +11,6 @@ export class Tracker {
         this.resultContainer = this.trackerBody.querySelector( '[role="resultContainer"]' )
         this.loader = new Loader( this.inputBody )
         this.attachEvents()
-        this.code = 'MTS133937058'
     }
 
     attachEvents() {
@@ -29,18 +28,23 @@ export class Tracker {
         this.resultContainer.classList.remove( 'show' )
         this.resultContainer.innerHTML = ''
         this.resultContainer.append( body )
-        body.innerHTML = data.history.map( item => `
-            <div class="tracker-item">
-                <div class="ti-header">${ item.eventDateTime.toLocaleString() }</div>
-                <div class="ti-value">${ item.eventStatus }</div>
-            </div>
-        `).join('')
+        if ( data.history.length ) {
+            body.innerHTML = data.history.map( item => `
+                <div class="tracker-item">
+                    <div class="ti-header">${ item.eventDateTime.toLocaleString() }</div>
+                    <div class="ti-value">${ item.eventStatus }</div>
+                </div>
+            `).join('')
+        } else {
+            body.innerHTML = 'По данному коду пока нет информации'
+        }
+
         this.resultContainer.classList.add( 'show' )
     }
 
     getData( callback ) {
 
-        
+        // TEST DATA
         setTimeout( () => {
             let tdata = {"history":[{"eventStatus":"Загружен реестр ИМ","eventDateTime":"2021-05-20 18:53:56"},{"eventStatus":"Принято к доставке","eventDateTime":"2021-05-20 20:51:12"},{"eventStatus":"Передано на сортировку","eventDateTime":"2021-05-20 20:51:13"},{"eventStatus":"Отправлено в город назначения","eventDateTime":"2021-05-21 05:40:43"}],"lastEvent":{"eventStatus":"Отправлено в город назначения","eventDateTime":"2021-05-21 05:40:43"}}
 
@@ -53,14 +57,23 @@ export class Tracker {
             }
             callback( null, tdata )
         }, 1000 )
-        
-        /*fetch( this.url + this.code )
+
+        return ;
+        callback = callback || function(){ return null }
+        fetch( this.url + this.code )
             .then( res => json() )
-            .then( data => console.log( data ) )
-            .catch( e => {
-                this.loader.hide()
-                this.showError()
-            })*/
+            .then( data => {
+                data.history = data.history && Array.isArray( data.history ) ? data.history.map( item => {
+                    item.eventDateTime = new Date( item.eventDateTime )
+                    return item
+                }) : []
+                data.lastEvent = data.lastEvent || {}
+                if ( data.lastEvent.eventDateTime ) {
+                    data.lastEvent.eventDateTime = new Date( data.lastEvent.eventDateTime )
+                }
+                callback( null, data )
+            } )
+            .catch( e => callback( err, null ) )
     }
 
     process() {
