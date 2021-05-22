@@ -32,3 +32,7 @@ a {
     text-decoration: none;
     margin-bottom: 12px;
 }
+
+div[block] {
+    display: none;
+}
