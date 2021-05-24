@@ -35,7 +35,7 @@ module.exports = env => {
         }
 	}
     buildConfig.module.rules.push({
-		test: /\.(png|jpe?g|gif|woff2|eot|woff)$/i,
+		test: /\.(png|jpe?g|gif|woff2|eot|woff|svg)$/i,
 		use: {
 			loader: 'file-loader'
 		}

@@ -1,11 +1,13 @@
 @import './reset.scss';
-@import './common.scss';
 @import './header.scss';
 @import './footer.scss';
-@import './elems.scss';
 @import './loader.scss';
+@import './common.scss';
+@import './elems.scss';
 @import './blocks/tracker.scss';
 @import './blocks/home.scss';
+@import './blocks/returns.scss';
+@import './blocks/contacts.scss';
 
 @font-face {
     font-family: 'Museo Sans Cyrl';

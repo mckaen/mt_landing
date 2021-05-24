@@ -12,7 +12,7 @@
         border-radius: 4px;
         outline: 0;
     }
-    button {
+    button, input[type="submit"] {
         display: block;
         margin: 0;
         cursor: pointer;
@@ -25,5 +25,12 @@
         color: #00366e;
         background: #ffe600;
         margin-left: 10px;
+    }
+    @media( max-width: 500px ) {
+        flex-direction: column;
+        input, button {
+            width: 100%;
+            margin: 15px 0 0 0!important;
+        }
     }
 }
