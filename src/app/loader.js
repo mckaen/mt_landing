@@ -36,10 +36,10 @@ export class Loader {
         this.overlay.style.opacity= currentValue+step
         this.visibleTimer = setTimeout ( () => this.changeOpacity( step, interval ), interval )
     }
-    hide( time = 300, framesCount = 40 ) {
+    hide( time = 300, framesCount = 10 ) {
         this.changeOpacity( -1 / ( time / framesCount ), framesCount )
     }
-    show( time = 300, framesCount = 40 ) {
+    show( time = 300, framesCount = 10 ) {
         this.overlay.style.display = 'flex'
         this.changeOpacity( 1 / ( time / framesCount ), framesCount )
     }
