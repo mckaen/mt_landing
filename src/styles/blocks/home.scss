@@ -1,5 +1,6 @@
-.home{
+.home {
     margin: 0 -15px;
+    font-family: 'MuseoSansCyrl 300',sans-serif;
     span {
         display: block;
         margin-bottom: 20px;
@@ -25,8 +26,8 @@
         padding: 20px;
         position: relative;
         .text-h1 {
-            border: 2px solid #ffffff20;
-            background: #FFFFFF68;
+            border: 2px solid rgba( 255,255,255, 0.2);
+            background: rgba( 255,255,255, 0.68);
             padding: 15px;
             border-radius: 18px;
             width: 100%;
@@ -43,7 +44,7 @@
             margin-top: -24px;
             background-position-x: 26px;
             background-size: contain;
-
+            font-size: 1px;
         }
         .image2{
             width: 555px;
@@ -52,6 +53,7 @@
             background-repeat: no-repeat;
             position: absolute;
             right: 0;
+            font-size: 1px;
             bottom: 37px;
             background-size: contain;
             @media ( max-width: 780px) {
@@ -74,6 +76,7 @@
             background-position: bottom right;
             background-size: cover;
             min-height: 400px;
+            display: flex;
             .text-h1 { display: none;}
             .image1{ display: none ;}
             .text-h2{
@@ -81,6 +84,7 @@
                 padding-top: 72px;
                 max-width: 60%;
                 line-height: 25px;
+                color: #005095;
             }
         }
         
@@ -93,14 +97,16 @@
         margin-top: -52px;
         z-index: 1000;
         position: relative;
+        color: #005095;
         .text-h3{
-            border: 2px solid #ffffff20;
-            background: #FFFFFF68;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.68);
             padding: 15px;
             border-radius: 18px;
             width: 100%;
             max-width: 500px;
             font-size: 19px;
+            text-align: left;
         }
         @media( max-width: 570px ) {
             display: block;
@@ -111,15 +117,18 @@
         background-color: #ccf7b7;
         padding: 0 20px;
         color: #005095;
-        font-size: 19px;
+        font-size: 16px;
         font-weight: 300;
-        >span {
-            border: 2px solid #ffffff20;
-            background: #FFFFFF68;
+        span.ds-text {
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.68);
             padding: 15px;
             border-radius: 18px;
             line-height: 22px;
             margin: 0;
+        }
+        span.hm-phone{
+            margin-bottom: 0;
         }
         @media( max-width: 570px ) {
             background-color: #98da7a;
@@ -136,6 +145,7 @@
         background: linear-gradient(180deg, rgba(204,247,183,1) 0%, rgba(233,205,187,1) 100%);
         height: 40px;
         width: 100%;
+        font-size: 1px;
         @media( max-width: 570px ) {
             background: linear-gradient(180deg, #98da7a 0%, rgba(233,205,187,1) 100%);
         }
@@ -162,6 +172,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             position: relative;
+            font-size: 1px;
             &::before {
                 content: '';
                 position: absolute;
@@ -169,7 +180,7 @@
                 right: 0;
                 bottom: 0;
                 width: 30px;
-                background-color: #e9cdbbb8;
+                background-color: rgba(233, 205, 187, 0.72);
             }
         }
         .hm-image2 {
@@ -178,6 +189,7 @@
             flex: 1;
             background-size: cover;
             background-repeat: no-repeat;
+            font-size: 1px;
             position: relative;
             &::before {
                 content: '';
@@ -186,7 +198,7 @@
                 left: 0;
                 bottom: 0;
                 width: 30px;
-                background-color: #e9cdbbb8;
+                background-color: rgba(233, 205, 187, 0.72);
             }
         }
         .center-content {
@@ -194,7 +206,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            padding-bottom: 20px;
+            min-height: 560px;
+            padding-bottom: 60px;
             span {
                 padding: 10px;
                 display: flex;
@@ -209,6 +222,7 @@
                 background-image: url('./images/logo2.png');
                 background-position: center;
                 background-repeat: no-repeat;
+                font-size: 1px;
                 width: 100%;
                 height: 230px;
                 background-size: contain;
@@ -229,8 +243,9 @@
                 order: 1;
                 width: 50%;
                 padding: 10px;
-                >span {
-                    display: none;
+                min-height: 0;
+                span {
+                    display: none!important;
                 }
                 .logo2 {
                     min-height: 400px;
@@ -241,15 +256,21 @@
     }
 
     .hblock1{
+        a {
+            display: inline;
+            font-weight: 600;
+        }
         padding: 15px;
         background-color: #E7C4AE;
         color: #81665D;
         padding-bottom: 8px;
         .inner {
-            border: 2px solid #00000020;
+            border: 2px solid rgba(0,0,0,0.2);
             border-radius: 18px;
-            background-color: #ffffff68;
+            background-color: rgba(255,255,255,0.68);
             padding: 20px 30px;
+            font-weight: 300;
+            text-align: left;
         }
         @media ( max-width: 570px ) {
             background-color: rgb(233,205,187);
@@ -273,6 +294,7 @@
             padding-left: 15px;
             display: flex;
             align-items: center;
+            text-align: left;
         }
         .promo {
             display: flex;
@@ -290,6 +312,7 @@
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
+                font-size: 1px;
             }
             .promo-left {
                 flex: 1;
@@ -347,11 +370,12 @@
         color: #81665D;
         padding-bottom: 8px;
         .inner {
-            border: 2px solid #00000020;
+            border: 2px solid rgba(0,0,0,0.2);
             border-radius: 18px;
-            background-color: #ffffff68;
+            background-color: rgba(255,255,255,0.68);
             padding: 20px 30px;
             line-height: 23px;
+            text-align: left;
         }
         span {
             margin-bottom: 0;

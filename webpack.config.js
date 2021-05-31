@@ -2,7 +2,8 @@ const develop = process.argv.indexOf( 'production' ) == -1,
     { join } = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     MiniCssExtractPlugin = require('mini-css-extract-plugin'),
-    { CleanWebpackPlugin } = require('clean-webpack-plugin')
+    { CleanWebpackPlugin } = require('clean-webpack-plugin'),
+	CopyPlugin = require( 'copy-webpack-plugin' )
 
 module.exports = env => {
 	const buildConfig = {
@@ -87,6 +88,10 @@ module.exports = env => {
         inject: 'body',
 		publicPath: '/assets/'
 	}) )
+
+	buildConfig.plugins.push( new CopyPlugin( { patterns: [
+		{ from: './src/static' }
+	] } ) )
 
     buildConfig.plugins.push( new CleanWebpackPlugin() )
     return buildConfig
