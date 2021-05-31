@@ -39,3 +39,9 @@ a {
 article[block] {
     display: none;
 }
+
+@media( max-width: 570px ) {
+    .line{
+        flex-direction: column;
+    }     
+}
