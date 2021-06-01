@@ -4,7 +4,6 @@ export class Returns {
         if ( !this.dpdInputForm ) return false
         this.dpdInput = this.dpdInputForm.querySelector( 'input' )
         this.attachEvents()
-        console.log( this )
     }
     attachEvents() {
         this.dpdInputForm.addEventListener( 'submit', this.dpdSubmitForm.bind( this ) )

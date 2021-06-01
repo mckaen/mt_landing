@@ -5,6 +5,17 @@
         <meta name="viewport" content="width=device-width">
         <title>Интернет-магазин myToys.ru прощается с вами!</title>
         <link rel="shortcut icon" href="/assets/mt_fav.svg" type="image/svg+xml">
+        <script>
+        ( function(w,d,s,l,i){
+            if ( w.location.hostname != 'www.mytoys.ru' ) return false
+            w[l]=w[l]||[];
+            w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+        } )(window,document,'script','dataLayer','GTM-TQW4TX');
+        </script>
     </head>
     <body>
         
@@ -16,7 +27,6 @@
 
                 <%= require('html-loader!./html/home.html').default %>
                 <%= require('html-loader!./html/returns.html').default %>
-                <%= require('html-loader!./html/tracker.html').default %>
                 <%= require('html-loader!./html/contacts.html').default %>
                 <%= require('html-loader!./html/privacypolicy.html').default %>
                 <%= require('html-loader!./html/security.html').default %>
