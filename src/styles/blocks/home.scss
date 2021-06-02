@@ -1,6 +1,5 @@
 article.home {
     margin: 0 -15px;
-    font-family: 'MuseoSansCyrl 300',sans-serif;
     padding-bottom: 25px;
     span {
         display: block;
@@ -173,7 +172,6 @@ article.home {
             background-repeat: no-repeat;
             background-size: cover;
             position: relative;
-            font-size: 1px;
             &::before {
                 content: '';
                 position: absolute;
